@@ -1,0 +1,716 @@
+===== T1 - VIEW =====
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.006
+
+
+View VW_ACCOUNT_BRANCH created.
+
+Elapsed: 00:00:00.014
+
+
+ACCOUNT_NUMBER BALANCE BRANCH_CITY 
+-------------- ------- ----------- 
+A-000377        3514.2 London      
+A-000379       3080.74 London      
+A-000390       1222.99 London      
+A-000392        980.91 London      
+A-000403        175.73 London      
+
+
+Elapsed: 00:00:00.007
+5 rows selected.
+
+
+===== T2 - BLOCK, VARIABLES, PRINTING =====
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.005
+
+
+Customers : 5001    Total balance : 339,785,108.66
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.008
+
+
+===== T3 - IF / CASE =====
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.006
+
+
+Branch                                 Assets  Class
+------------------------------------------------------
+Aberdeen Union Street          140,000,000.00  Local
+Belfast City                   115,000,000.00  Local
+Birmingham New Street          280,000,000.00  Major
+Bournemouth - New Branch           100,000.00  Local
+Brighton Pier                  105,000,000.00  Local
+Bristol Harbourside            145,000,000.00  Local
+Cambridge Market Square        135,000,000.00  Local
+Cardiff Queen Street           175,000,000.00  Local
+Edinburgh Princes Street       410,000,000.00  Major
+Exeter Cathedral                85,000,000.00  Local
+Glasgow Buchanan Street        265,000,000.00  Major
+Leeds City                     210,000,000.00  Major
+Liverpool One                  185,000,000.00  Local
+London - Canary Wharf          950,000,000.00  Major
+London - City                  880,000,000.00  Major
+Manchester Central             320,000,000.00  Major
+Newcastle Eldon Square         155,000,000.00  Local
+Nottingham City                130,000,000.00  Local
+Oxford High Street             125,000,000.00  Local
+Reading Central                120,000,000.00  Local
+Sheffield City                 140,000,000.00  Local
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.007
+
+
+===== T4 - CURSOR =====
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.005
+
+
+Loan           Branch                               Amount
+----------------------------------------------------------
+L-004963       Edinburgh Princes Street         997,750.00
+L-006963       Oxford High Street               997,750.00
+L-005963       Birmingham New Street            997,750.00
+L-003963       Leeds City                       997,750.00
+L-007963       London - City                    997,750.00
+L-002963       London - Canary Wharf            997,750.00
+L-000963       Nottingham City                  997,750.00
+L-001963       London - City                    997,750.00
+L-001926       London - City                    995,500.00
+L-003926       Leeds City                       995,500.00
+L-002926       London - Canary Wharf            995,500.00
+L-007926       London - City                    995,500.00
+L-006926       Nottingham City                  995,500.00
+L-000926       Nottingham City                  995,500.00
+L-004926       Cardiff Queen Street             995,500.00
+L-005926       Birmingham New Street            995,500.00
+L-003889       Leeds City                       993,250.00
+L-004889       Cardiff Queen Street             993,250.00
+L-002889       London - Canary Wharf            993,250.00
+L-000889       Newcastle Eldon Square           993,250.00
+L-001889       London - City                    993,250.00
+L-007889       London - City                    993,250.00
+L-005889       Birmingham New Street            993,250.00
+L-006889       Nottingham City                  993,250.00
+L-001852       London - City                    991,000.00
+L-007852       London - City                    991,000.00
+L-004852       Cambridge Market Square          991,000.00
+L-006852       Newcastle Eldon Square           991,000.00
+L-002852       London - Canary Wharf            991,000.00
+L-005852       Birmingham New Street            991,000.00
+L-000852       Newcastle Eldon Square           991,000.00
+L-003852       Glasgow Buchanan Street          991,000.00
+L-006815       Newcastle Eldon Square           988,750.00
+L-002815       London - Canary Wharf            988,750.00
+L-004815       Cambridge Market Square          988,750.00
+L-000815       Manchester Central               988,750.00
+L-005815       Belfast City                     988,750.00
+L-003815       Glasgow Buchanan Street          988,750.00
+L-007815       London - City                    988,750.00
+L-001815       London - City                    988,750.00
+L-002778       London - Canary Wharf            986,500.00
+L-001778       London - City                    986,500.00
+L-000778       Manchester Central               986,500.00
+L-006778       Manchester Central               986,500.00
+L-007778       London - City                    986,500.00
+L-005778       Aberdeen Union Street            986,500.00
+L-003778       Glasgow Buchanan Street          986,500.00
+L-004778       Bristol Harbourside              986,500.00
+L-006741       Manchester Central               984,250.00
+L-004741       Bristol Harbourside              984,250.00
+L-000741       Manchester Central               984,250.00
+L-005741       Sheffield City                   984,250.00
+L-003741       Glasgow Buchanan Street          984,250.00
+L-007741       London - City                    984,250.00
+L-001741       London - City                    984,250.00
+L-002741       Liverpool One                    984,250.00
+L-004704       Bristol Harbourside              982,000.00
+L-002704       Liverpool One                    982,000.00
+L-000704       Manchester Central               982,000.00
+L-007704       London - City                    982,000.00
+L-005704       Sheffield City                   982,000.00
+L-006704       Manchester Central               982,000.00
+L-003704       Exeter Cathedral                 982,000.00
+L-001704       London - Canary Wharf            982,000.00
+L-006667       Manchester Central               979,750.00
+L-007667       London - Canary Wharf            979,750.00
+L-002667       Liverpool One                    979,750.00
+L-001667       London - Canary Wharf            979,750.00
+L-000667       Manchester Central               979,750.00
+L-003667       Edinburgh Princes Street         979,750.00
+L-005667       Sheffield City                   979,750.00
+L-004667       Brighton Pier                    979,750.00
+L-002630       Leeds City                       977,500.00
+L-001630       London - Canary Wharf            977,500.00
+L-004630       Birmingham New Street            977,500.00
+L-006630       Manchester Central               977,500.00
+L-003630       Edinburgh Princes Street         977,500.00
+L-007630       London - Canary Wharf            977,500.00
+L-005630       Reading Central                  977,500.00
+L-000630       Manchester Central               977,500.00
+L-004593       Birmingham New Street            975,250.00
+L-007593       London - Canary Wharf            975,250.00
+L-000593       London - City                    975,250.00
+L-003593       Edinburgh Princes Street         975,250.00
+L-002593       Leeds City                       975,250.00
+L-001593       London - Canary Wharf            975,250.00
+L-006593       Manchester Central               975,250.00
+L-005593       Oxford High Street               975,250.00
+L-005556       Oxford High Street               973,000.00
+L-004556       Birmingham New Street            973,000.00
+L-002556       Leeds City                       973,000.00
+L-003556       Edinburgh Princes Street         973,000.00
+L-001556       London - Canary Wharf            973,000.00
+L-000556       London - City                    973,000.00
+L-006556       London - City                    973,000.00
+L-007556       London - Canary Wharf            973,000.00
+L-004519       Birmingham New Street            970,750.00
+L-002519       Leeds City                       970,750.00
+L-003519       Cardiff Queen Street             970,750.00
+L-006519       London - City                    970,750.00
+L-000519       London - City                    970,750.00
+L-001519       London - Canary Wharf            970,750.00
+L-007519       London - Canary Wharf            970,750.00
+L-005519       Nottingham City                  970,750.00
+L-002482       Leeds City                       968,500.00
+L-007482       London - Canary Wharf            968,500.00
+L-005482       Nottingham City                  968,500.00
+L-004482       Birmingham New Street            968,500.00
+L-006482       London - City                    968,500.00
+L-003482       Cardiff Queen Street             968,500.00
+L-001482       London - Canary Wharf            968,500.00
+L-000482       London - City                    968,500.00
+L-005445       Newcastle Eldon Square           966,250.00
+L-007445       London - Canary Wharf            966,250.00
+L-003445       Cambridge Market Square          966,250.00
+L-004445       Birmingham New Street            966,250.00
+L-006445       London - City                    966,250.00
+L-000445       London - City                    966,250.00
+L-002445       Glasgow Buchanan Street          966,250.00
+L-001445       London - Canary Wharf            966,250.00
+L-007408       London - Canary Wharf            964,000.00
+L-002408       Glasgow Buchanan Street          964,000.00
+L-003408       Cambridge Market Square          964,000.00
+L-006408       London - City                    964,000.00
+L-004408       Belfast City                     964,000.00
+L-000408       London - City                    964,000.00
+L-001408       London - Canary Wharf            964,000.00
+L-005408       Newcastle Eldon Square           964,000.00
+L-007371       London - Canary Wharf            961,750.00
+L-003371       Bristol Harbourside              961,750.00
+L-001371       London - Canary Wharf            961,750.00
+L-002371       Glasgow Buchanan Street          961,750.00
+L-004371       Aberdeen Union Street            961,750.00
+L-000371       London - City                    961,750.00
+L-006371       London - City                    961,750.00
+L-005371       Manchester Central               961,750.00
+L-000334       London - City                    959,500.00
+L-002334       Glasgow Buchanan Street          959,500.00
+L-001334       Liverpool One                    959,500.00
+L-003334       Bristol Harbourside              959,500.00
+L-004334       Sheffield City                   959,500.00
+L-006334       London - City                    959,500.00
+L-005334       Manchester Central               959,500.00
+L-007334       London - Canary Wharf            959,500.00
+L-003297       Bristol Harbourside              957,250.00
+L-007297       Liverpool One                    957,250.00
+L-005297       Manchester Central               957,250.00
+L-006297       London - City                    957,250.00
+L-004297       Sheffield City                   957,250.00
+L-001297       Liverpool One                    957,250.00
+L-002297       Exeter Cathedral                 957,250.00
+L-000297       London - Canary Wharf            957,250.00
+L-002260       Edinburgh Princes Street         955,000.00
+L-004260       Sheffield City                   955,000.00
+L-001260       Liverpool One                    955,000.00
+L-005260       Manchester Central               955,000.00
+L-006260       London - Canary Wharf            955,000.00
+L-000260       London - Canary Wharf            955,000.00
+L-003260       Brighton Pier                    955,000.00
+L-007260       Liverpool One                    955,000.00
+L-004223       Reading Central                  952,750.00
+L-003223       Birmingham New Street            952,750.00
+L-001223       Leeds City                       952,750.00
+L-000223       London - Canary Wharf            952,750.00
+L-002223       Edinburgh Princes Street         952,750.00
+L-005223       Manchester Central               952,750.00
+L-006223       London - Canary Wharf            952,750.00
+L-007223       Liverpool One                    952,750.00
+L-005186       Manchester Central               950,500.00
+L-000186       London - Canary Wharf            950,500.00
+L-003186       Birmingham New Street            950,500.00
+L-002186       Edinburgh Princes Street         950,500.00
+L-006186       London - Canary Wharf            950,500.00
+L-001186       Leeds City                       950,500.00
+L-007186       Leeds City                       950,500.00
+L-004186       Oxford High Street               950,500.00
+L-007149       Leeds City                       948,250.00
+L-001149       Leeds City                       948,250.00
+L-003149       Birmingham New Street            948,250.00
+L-000149       London - Canary Wharf            948,250.00
+L-004149       Oxford High Street               948,250.00
+L-005149       London - City                    948,250.00
+L-006149       London - Canary Wharf            948,250.00
+L-002149       Edinburgh Princes Street         948,250.00
+L-001112       Leeds City                       946,000.00
+L-002112       Cardiff Queen Street             946,000.00
+L-000112       London - Canary Wharf            946,000.00
+L-007112       Leeds City                       946,000.00
+L-006112       London - Canary Wharf            946,000.00
+L-004112       Nottingham City                  946,000.00
+L-005112       London - City                    946,000.00
+L-003112       Birmingham New Street            946,000.00
+L-007075       Leeds City                       943,750.00
+L-003075       Birmingham New Street            943,750.00
+L-000075       London - Canary Wharf            943,750.00
+L-004075       Nottingham City                  943,750.00
+L-005075       London - City                    943,750.00
+L-006075       London - Canary Wharf            943,750.00
+L-002075       Cardiff Queen Street             943,750.00
+L-001075       Leeds City                       943,750.00
+L-003038       Birmingham New Street            941,500.00
+L-001038       Glasgow Buchanan Street          941,500.00
+L-000038       London - Canary Wharf            941,500.00
+L-006038       London - Canary Wharf            941,500.00
+L-004038       Newcastle Eldon Square           941,500.00
+L-007038       Leeds City                       941,500.00
+L-005038       London - City                    941,500.00
+L-002038       Cambridge Market Square          941,500.00
+L-006001       London - Canary Wharf            939,250.00
+L-001001       Glasgow Buchanan Street          939,250.00
+L-000001       London - Canary Wharf            939,250.00
+L-004001       Newcastle Eldon Square           939,250.00
+L-005001       London - City                    939,250.00
+L-003001       Belfast City                     939,250.00
+L-007001       Glasgow Buchanan Street          939,250.00
+L-002001       Cambridge Market Square          939,250.00
+L-000964       Glasgow Buchanan Street          937,000.00
+L-001964       Bristol Harbourside              937,000.00
+L-004964       London - City                    937,000.00
+L-006964       Glasgow Buchanan Street          937,000.00
+L-005964       London - Canary Wharf            937,000.00
+L-003964       Manchester Central               937,000.00
+L-007964       Cambridge Market Square          937,000.00
+L-002964       Aberdeen Union Street            937,000.00
+L-002927       Sheffield City                   934,750.00
+L-005927       London - Canary Wharf            934,750.00
+L-007927       Bristol Harbourside              934,750.00
+L-006927       Glasgow Buchanan Street          934,750.00
+L-000927       Glasgow Buchanan Street          934,750.00
+L-001927       Bristol Harbourside              934,750.00
+L-004927       London - City                    934,750.00
+L-003927       Manchester Central               934,750.00
+L-005890       Liverpool One                    932,500.00
+L-003890       Manchester Central               932,500.00
+L-001890       Bristol Harbourside              932,500.00
+L-006890       Glasgow Buchanan Street          932,500.00
+L-004890       London - City                    932,500.00
+L-002890       Sheffield City                   932,500.00
+L-007890       Bristol Harbourside              932,500.00
+L-000890       Exeter Cathedral                 932,500.00
+L-002853       Sheffield City                   930,250.00
+L-001853       Brighton Pier                    930,250.00
+L-003853       Manchester Central               930,250.00
+L-006853       Exeter Cathedral                 930,250.00
+L-007853       Bristol Harbourside              930,250.00
+L-004853       London - Canary Wharf            930,250.00
+L-000853       Edinburgh Princes Street         930,250.00
+L-005853       Liverpool One                    930,250.00
+L-006816       Edinburgh Princes Street         928,000.00
+L-002816       Reading Central                  928,000.00
+L-004816       London - Canary Wharf            928,000.00
+L-000816       Edinburgh Princes Street         928,000.00
+L-005816       Liverpool One                    928,000.00
+L-003816       Manchester Central               928,000.00
+L-007816       Brighton Pier                    928,000.00
+L-001816       Birmingham New Street            928,000.00
+L-002779       Oxford High Street               925,750.00
+L-001779       Birmingham New Street            925,750.00
+L-000779       Edinburgh Princes Street         925,750.00
+L-006779       Edinburgh Princes Street         925,750.00
+L-007779       Birmingham New Street            925,750.00
+L-005779       Leeds City                       925,750.00
+L-003779       Manchester Central               925,750.00
+L-004779       London - Canary Wharf            925,750.00
+L-006742       Edinburgh Princes Street         923,500.00
+L-004742       London - Canary Wharf            923,500.00
+L-000742       Edinburgh Princes Street         923,500.00
+L-005742       Leeds City                       923,500.00
+L-003742       London - City                    923,500.00
+L-007742       Birmingham New Street            923,500.00
+L-001742       Birmingham New Street            923,500.00
+L-002742       Oxford High Street               923,500.00
+L-004705       London - Canary Wharf            921,250.00
+L-002705       Nottingham City                  921,250.00
+L-000705       Cardiff Queen Street             921,250.00
+L-007705       Birmingham New Street            921,250.00
+L-005705       Leeds City                       921,250.00
+L-006705       Edinburgh Princes Street         921,250.00
+L-003705       London - City                    921,250.00
+L-001705       Birmingham New Street            921,250.00
+L-006668       Cardiff Queen Street             919,000.00
+L-007668       Birmingham New Street            919,000.00
+L-002668       Nottingham City                  919,000.00
+L-001668       Birmingham New Street            919,000.00
+L-000668       Cardiff Queen Street             919,000.00
+L-003668       London - City                    919,000.00
+L-005668       Leeds City                       919,000.00
+L-004668       London - Canary Wharf            919,000.00
+L-002631       Newcastle Eldon Square           916,750.00
+L-001631       Birmingham New Street            916,750.00
+L-004631       London - Canary Wharf            916,750.00
+L-006631       Cardiff Queen Street             916,750.00
+L-003631       London - City                    916,750.00
+L-007631       Birmingham New Street            916,750.00
+L-005631       Leeds City                       916,750.00
+L-000631       Cambridge Market Square          916,750.00
+L-004594       London - Canary Wharf            914,500.00
+L-007594       Birmingham New Street            914,500.00
+L-000594       Cambridge Market Square          914,500.00
+L-003594       London - City                    914,500.00
+L-002594       Newcastle Eldon Square           914,500.00
+L-001594       Belfast City                     914,500.00
+L-006594       Cambridge Market Square          914,500.00
+L-005594       Glasgow Buchanan Street          914,500.00
+L-005557       Glasgow Buchanan Street          912,250.00
+L-004557       London - Canary Wharf            912,250.00
+L-002557       Manchester Central               912,250.00
+L-003557       London - City                    912,250.00
+L-001557       Aberdeen Union Street            912,250.00
+L-000557       Bristol Harbourside              912,250.00
+L-006557       Cambridge Market Square          912,250.00
+L-007557       Belfast City                     912,250.00
+L-004520       London - Canary Wharf            910,000.00
+L-002520       Manchester Central               910,000.00
+L-003520       London - City                    910,000.00
+L-006520       Bristol Harbourside              910,000.00
+L-000520       Bristol Harbourside              910,000.00
+L-001520       Sheffield City                   910,000.00
+L-007520       Aberdeen Union Street            910,000.00
+L-005520       Glasgow Buchanan Street          910,000.00
+L-002483       Manchester Central               907,750.00
+L-007483       Sheffield City                   907,750.00
+L-005483       Glasgow Buchanan Street          907,750.00
+L-004483       Liverpool One                    907,750.00
+L-006483       Bristol Harbourside              907,750.00
+L-003483       London - City                    907,750.00
+L-001483       Sheffield City                   907,750.00
+L-000483       Bristol Harbourside              907,750.00
+L-005446       Exeter Cathedral                 905,500.00
+L-007446       Sheffield City                   905,500.00
+L-003446       London - Canary Wharf            905,500.00
+L-004446       Liverpool One                    905,500.00
+L-006446       Bristol Harbourside              905,500.00
+L-000446       Brighton Pier                    905,500.00
+L-002446       Manchester Central               905,500.00
+L-001446       Sheffield City                   905,500.00
+L-007409       Sheffield City                   903,250.00
+L-002409       Manchester Central               903,250.00
+L-003409       London - Canary Wharf            903,250.00
+L-006409       Brighton Pier                    903,250.00
+L-004409       Liverpool One                    903,250.00
+L-000409       Birmingham New Street            903,250.00
+L-001409       Reading Central                  903,250.00
+L-005409       Edinburgh Princes Street         903,250.00
+L-007372       Reading Central                  901,000.00
+L-003372       London - Canary Wharf            901,000.00
+L-001372       Oxford High Street               901,000.00
+L-002372       Manchester Central               901,000.00
+L-004372       Leeds City                       901,000.00
+L-000372       Birmingham New Street            901,000.00
+L-006372       Birmingham New Street            901,000.00
+L-005372       Edinburgh Princes Street         901,000.00
+L-007335       Oxford High Street               898,750.00
+L-001335       Oxford High Street               898,750.00
+L-003335       London - Canary Wharf            898,750.00
+L-000335       Birmingham New Street            898,750.00
+L-006335       Birmingham New Street            898,750.00
+L-004335       Leeds City                       898,750.00
+L-005335       Edinburgh Princes Street         898,750.00
+L-002335       London - City                    898,750.00
+L-001298       Nottingham City                  896,500.00
+L-002298       London - City                    896,500.00
+L-000298       Birmingham New Street            896,500.00
+L-007298       Oxford High Street               896,500.00
+L-005298       Edinburgh Princes Street         896,500.00
+L-006298       Birmingham New Street            896,500.00
+L-004298       Leeds City                       896,500.00
+L-003298       London - Canary Wharf            896,500.00
+L-004261       Leeds City                       894,250.00
+L-003261       London - Canary Wharf            894,250.00
+L-000261       Birmingham New Street            894,250.00
+L-005261       Cardiff Queen Street             894,250.00
+L-006261       Birmingham New Street            894,250.00
+L-007261       Nottingham City                  894,250.00
+L-002261       London - City                    894,250.00
+L-001261       Nottingham City                  894,250.00
+L-001224       Newcastle Eldon Square           892,000.00
+L-006224       Birmingham New Street            892,000.00
+L-002224       London - City                    892,000.00
+L-000224       Birmingham New Street            892,000.00
+L-003224       London - Canary Wharf            892,000.00
+L-007224       Nottingham City                  892,000.00
+L-005224       Cardiff Queen Street             892,000.00
+L-004224       Leeds City                       892,000.00
+L-000187       Belfast City                     889,750.00
+L-005187       Cambridge Market Square          889,750.00
+L-006187       Birmingham New Street            889,750.00
+L-004187       Glasgow Buchanan Street          889,750.00
+L-003187       London - Canary Wharf            889,750.00
+L-001187       Newcastle Eldon Square           889,750.00
+L-002187       London - City                    889,750.00
+L-007187       Newcastle Eldon Square           889,750.00
+L-006150       Belfast City                     887,500.00
+L-003150       London - Canary Wharf            887,500.00
+L-007150       Newcastle Eldon Square           887,500.00
+L-001150       Manchester Central               887,500.00
+L-004150       Glasgow Buchanan Street          887,500.00
+L-002150       London - City                    887,500.00
+L-005150       Cambridge Market Square          887,500.00
+L-000150       Aberdeen Union Street            887,500.00
+----------------------------------------------------------
+Loans over 500,000 : 400
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.051
+
+
+===== T5 - EXCEPTIONS =====
+
+
+PL/SQL procedure successfully completed.
+
+
+Sorry, no customer named "nobody_test" was found.
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.014
+
+
+===== T6 - PROCEDURE =====
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.006
+
+
+Procedure SP_ADD_CUSTOMER compiled
+
+Elapsed: 00:00:00.059
+
+
+===== T7 - FUNCTIONS =====
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.006
+
+
+Function FN_CUSTOMER_BALANCE compiled
+
+Elapsed: 00:00:00.022
+
+
+No errors.
+
+
+Function FN_ASSETS_BAND compiled
+
+Elapsed: 00:00:00.023
+
+
+No errors.
+
+
+CUSTOMER_NAME           TOTAL_BALANCE 
+----------------------- ------------- 
+Willow Begum (C-000262)       93064.1 
+Alice Taylor (C-000263)      88159.06 
+Anna Wright (C-000264)        7901.24 
+Ali Clarke (C-000265)         7323.32 
+Layla Scott (C-000266)        6978.72 
+
+
+Elapsed: 00:00:00.033
+5 rows selected.
+
+
+NO_ACCOUNTS_BALANCE 
+------------------- 
+                  0 
+
+
+Elapsed: 00:00:00.006
+1 rows selected.
+
+
+BRANCH_NAME                 ASSETS BAND  
+------------------------ --------- ----- 
+London - Canary Wharf    950000000 Big   
+London - City            880000000 Big   
+Edinburgh Princes Street 410000000 Big   
+Manchester Central       320000000 Big   
+Birmingham New Street    280000000 Big   
+Glasgow Buchanan Street  265000000 Big   
+Leeds City               210000000 Big   
+Liverpool One            185000000 Small 
+Cardiff Queen Street     175000000 Small 
+Newcastle Eldon Square   155000000 Small 
+Bristol Harbourside      145000000 Small 
+Sheffield City           140000000 Small 
+Aberdeen Union Street    140000000 Small 
+Cambridge Market Square  135000000 Small 
+Nottingham City          130000000 Small 
+Oxford High Street       125000000 Small 
+Reading Central          120000000 Small 
+Belfast City             115000000 Small 
+Brighton Pier            105000000 Small 
+Exeter Cathedral          85000000 Small 
+Bournemouth - New Branch    100000 Small 
+
+
+Elapsed: 00:00:00.013
+21 rows selected.
+
+
+===== T8 - TRIGGER =====
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.006
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.077
+
+
+Table LOAN_LOG created.
+
+Elapsed: 00:00:00.033
+
+
+Trigger TRG_LOAN_INSERT compiled
+
+Elapsed: 00:00:00.023
+
+
+No errors.
+
+
+1 row inserted.
+
+Elapsed: 00:00:00.018
+
+
+Commit complete.
+
+Elapsed: 00:00:00.004
+
+
+LOG_ID LOAN_NUMBER   AMOUNT INSERTED_BY      INSERTED_AT                 
+------ ----------- -------- ---------------- --------------------------- 
+     1 L-T8-TEST   12345.67 ALI_GAF_24074767 2026-11-14T18:55:20.390626Z 
+
+
+Elapsed: 00:00:00.011
+1 rows selected.
+
+
+1 row deleted.
+
+Elapsed: 00:00:00.007
+
+
+Commit complete.
+
+Elapsed: 00:00:00.005
+
+
+===== T9 - INTEGRATION =====
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.007
+
+
+Procedure SP_POST_INTEREST compiled
+
+Elapsed: 00:00:00.023
+
+
+No errors.
+
+
+ACCOUNT_NUMBER BRANCH_NAME              BAND   BALANCE 
+-------------- ------------------------ ----- -------- 
+A-000372       Edinburgh Princes Street Big   48556.98 
+A-000373       London - City            Big   46733.09 
+A-000374       Cardiff Queen Street     Small 43613.94 
+A-000375       London - City            Big    3977.11 
+A-000376       Bristol Harbourside      Small  3631.92 
+
+
+Elapsed: 00:00:00.009
+5 rows selected.
+
+
+Accounts credited : 5136
+Total interest    : 2,205,701.74
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.195
+
+
+ACCOUNT_NUMBER BRANCH_NAME              BAND   BALANCE 
+-------------- ------------------------ ----- -------- 
+A-000372       Edinburgh Princes Street Big   49042.55 
+A-000373       London - City            Big   47200.42 
+A-000374       Cardiff Queen Street     Small 43613.94 
+A-000375       London - City            Big    4016.88 
+A-000376       Bristol Harbourside      Small  3631.92 
+
+
+Elapsed: 00:00:00.004
+5 rows selected.
+
+
+==================================================
+  All tasks executed.
+  Capture the Script Output tab as output.txt.
+==================================================
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.007

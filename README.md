@@ -1,94 +1,35 @@
-# Exam Office Records
+# NorthBank UK – PL/SQL Group Project
 
-An accessible, keyboard-friendly web app for a university exam office: staff sign in, look up students,
-enter coursework/exam marks quickly, and search, sort and edit records.
+All code is in `T1_to_T9.sql`. Run the whole file from top to bottom. The results are in `output.txt`.
 
-**Stack:** HTML, CSS and vanilla JavaScript (front end) · Node.js + Express (back end) · SQLite, using the `node:sqlite` module built into Node.js (database).
+**Assumption:** we used the standard NorthBank column names (for example `branch_city`, `assets`, `customer_city`, `amount`, `balance`).
 
-## Run it on your computer
+## T1 – View
+We made a view called `vw_account_branch`. It joins the `account` table with the `branch` table on `branch_name`. For each account it shows the account number, the balance and the branch's city.
 
-1. Install Node.js 22.13 or newer (https://nodejs.org – the LTS version is best).
-2. In this folder:
-   ```bash
-   npm install
-   npm start
-   ```
-   On Windows PowerShell, if you see "running scripts is disabled", use `npm.cmd install` and `npm.cmd start`.
-3. Open http://localhost:3000
+## T2 – Block and variables
+The block counts the customers and adds up all the account balances, then prints both on one line. We used `NVL` so the total shows 0 instead of nothing if there are no accounts. The balance variable uses `%TYPE`, so it has the same data type as the column.
 
-Demo accounts (created automatically the first time):
+## T3 – IF / ELSE
+The block loops through every branch. If a branch has £200 million or more in assets it prints **Major**, otherwise **Local**. The £200 million limit is stored in a constant, so it's easy to change.
 
-| Role | Email | Password |
-|---|---|---|
-| Administrator (can delete) | admin@examoffice.test | Admin123! |
-| Exam officer | officer@examoffice.test | Officer123! |
+## T4 – Cursor
+We made a cursor that finds all loans over £500,000. We open it, fetch the rows one by one and print each one, and stop when there are no more rows. At the end we print how many loans were found using `%ROWCOUNT`, then close the cursor.
 
-You can also create your own account on the **Create an account** page. Choosing "Administrator" asks for an
-access code (default `EXAMS-ADMIN-2026`, change it with the `ADMIN_CODE` environment variable).
+## T5 – Exceptions
+The user types a customer name and the block prints that customer's city. If the name doesn't exist, the `NO_DATA_FOUND` error is caught and a friendly message is printed instead of crashing. Any other error is caught by `WHEN OTHERS`, which prints the error code and message.
 
-To put it online with your own domain, follow **DEPLOY.md**. It has two options: a DigitalOcean droplet, or Render (paid instance with a persistent disk).
+## T6 – Procedure
+`sp_add_customer` adds a new customer. First it checks whether the name already exists. If it does, it stops with error -20001. If not, it inserts the customer and saves with `COMMIT`. If anything goes wrong it undoes the change with `ROLLBACK`. We tested it by adding a customer once (it works) and then adding the same customer again (it's rejected).
 
-## Where the data is stored
+## T7 – Functions
+- `fn_customer_balance` returns a customer's total money across all their accounts, or 0 if they have no accounts.
+- `fn_assets_band` returns **Big** if a branch has £200 million or more in assets, otherwise **Small**.
 
-Everything is stored **on the server** in a single SQLite database file:
+We tested both with normal `SELECT` statements.
 
-- Locally: `data/exam-office.db` (created on first start)
-- On the live server: `/var/lib/exam-office/exam-office.db` (set by `DATA_DIR` in DEPLOY.md)
+## T8 – Trigger
+We created a `loan_log` table. The trigger `trg_loan_insert` runs automatically every time a new loan is added. It saves the loan number, the amount, the user who added it and the time. We tested it by adding a test loan and then looking at `loan_log`.
 
-| Table | What it holds |
-|---|---|
-| `users` | Staff accounts: name, email, role, and a **bcrypt hash** of the password (the real password is never stored) |
-| `sessions` | Who is signed in: a random token (also stored in the browser as an `HttpOnly` cookie called `sid`) and its expiry (8 hours) |
-| `students` | Student number, name, email, programme, year, enrolment status, support-plan flag |
-| `marks` | One row per assessment: student, module, type, attempt, raw mark, late/days late, mitigating circumstances, final mark, grade, notes, who recorded it and when |
-
-The browser only keeps three small conveniences in `localStorage` (last module, last assessment type, rows per
-page) and one-off "flash" messages in `sessionStorage`. No records are kept in the browser or in the JavaScript files.
-Data persists across refreshes, closing the browser and server restarts. To reset to the demo data, stop the
-server and delete the `.db` file (and the `-wal`/`-shm` files next to it).
-
-To inspect the database: install "DB Browser for SQLite" (https://sqlitebrowser.org) and open the file.
-
-## Project structure
-
-```
-server.js            Express server: pages, JSON API, sign-up/sign-in, sessions, validation
-db.js                Creates the SQLite tables and seeds demo data
-rules.js             Modules, programmes, grade boundaries, late-penalty rules
-views/               HTML pages (wrapped in _layout.html by server.js)
-public/css/styles.css
-public/js/common.js  API helper, status messages (aria-live), form error summary, busy buttons
-public/js/table.js   Reusable sortable / filterable / paginated table
-public/js/*.js       One script per page
-DEPLOY.md            Step-by-step: DigitalOcean droplet + Namecheap domain + HTTPS
-```
-
-## API summary
-
-| Method & path | Purpose |
-|---|---|
-| `POST /api/auth/signup`, `/login`, `/logout` | Accounts and sessions |
-| `GET /api/stats` | Dashboard numbers |
-| `GET/POST /api/students`, `GET/PUT/DELETE /api/students/:id` | Students (DELETE: admin only) |
-| `GET/POST /api/marks`, `GET/PUT/DELETE /api/marks/:id` | Marks (DELETE: admin only) |
-| `GET /api/marks/export.csv` | Download the filtered marks list |
-
-List endpoints accept `q`, filters, `sort`, `dir`, `page` and `pageSize`, so large tables are paged on the server.
-
-## Accessibility features (summary)
-
-- Landmarks (`header`, `nav`, `main`, `footer`), skip link, one `h1` per page, no skipped heading levels
-- Every input has a visible `<label>`; groups use `fieldset`/`legend`; hints and errors linked with `aria-describedby`
-- Error summary at the top of forms that receives focus and links to each field; inline errors with `aria-invalid`
-- Status messages (saved, deleted, result counts, loading) announced through `aria-live` regions
-- Sortable table headers are buttons with `aria-sort`; pagination moves focus to the result count
-- Native `<dialog>` for delete confirmation (focus trapped, Esc cancels, focus returns to the trigger)
-- Two-tone focus ring visible on light and dark backgrounds; 44px minimum button height
-- Colour contrast AA or better; status/grades/errors always have text or icons as well as colour
-- Tables reflow into labelled cards on narrow screens and at 200–400% zoom – no horizontal scrolling
-- Respects `prefers-reduced-motion` and Windows high-contrast (`forced-colors`)
-- Correct `autocomplete` values on sign-in/sign-up; show/hide password toggle with `aria-pressed`
-
-## Credits
-
-Libraries: Express, bcryptjs, express-rate-limit, and Node's built-in node:sqlite. Error-summary pattern inspired by the GOV.UK Design System documentation.
+## T9 – Integration
+`sp_post_interest` goes through every account. It uses `fn_assets_band` from T7 to check whether the account's branch is Big. If it is, it adds 1% interest, rounded to 2 decimal places. At the end it prints how many accounts got interest and the total amount paid. Changes are only saved if everything works; if there's an error, all the changes are undone.
